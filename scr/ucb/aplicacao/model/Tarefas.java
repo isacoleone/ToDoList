@@ -25,10 +25,12 @@ public class Tarefas {
     }
 
     public void setConcluida(boolean concluida) {
+        System.out.println("Tarefa criada com sucesso!");
+
         this.concluida = concluida;
     } 
 
+} 
 
-}
 
 
