@@ -43,19 +43,19 @@ public class Tarefas {
         return titulo;
     }
     public void setTitulo(String titulo) {
-        titulo = titulo;
+        this.titulo = titulo;
     }
     public String getDescricao() {
         return descricao;
     }
     public void setDescricao(String descricao) {
-        descricao = descricao;
+        this.descricao = descricao;
     }
     public String getData() {
         return data;
     }
     public void setData(String data) {
-        data = data;
+        this.data = data;
     }
     public boolean getCompleta() {
         return completa;
