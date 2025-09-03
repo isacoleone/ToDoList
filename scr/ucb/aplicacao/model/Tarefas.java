@@ -4,26 +4,26 @@ import java.time.LocalDateTime;
 
 public class Tarefas {
     private long ID;
-    private String Titulo;
-    private String Descricao;
-    private String Data;
+    private String titulo;
+    private String descricao;
+    private String data;
     private boolean completa;
-    private LocalDateTime DataAgora;
+    private LocalDateTime dataAgora;
 
     public Tarefas(){
-        this.DataAgora = LocalDateTime.now();
+        this.dataAgora = LocalDateTime.now();
         this.completa = false;
     }
 
     public Tarefas(String titulo){
         this();
-        this.Titulo = titulo;
+        this.titulo = titulo;
     }
 
     public Tarefas(String titulo, String descri){
         this();
-        this.Titulo = titulo;
-        this.Descricao = descri;
+        this.titulo = titulo;
+        this.descricao = descri;
 
     }
 
@@ -40,22 +40,22 @@ public class Tarefas {
         ID = iD;
     }
     public String getTitulo() {
-        return Titulo;
+        return titulo;
     }
     public void setTitulo(String titulo) {
-        Titulo = titulo;
+        titulo = titulo;
     }
     public String getDescricao() {
-        return Descricao;
+        return descricao;
     }
     public void setDescricao(String descricao) {
-        Descricao = descricao;
+        descricao = descricao;
     }
     public String getData() {
-        return Data;
+        return data;
     }
     public void setData(String data) {
-        Data = data;
+        data = data;
     }
     public boolean getCompleta() {
         return completa;
@@ -64,9 +64,9 @@ public class Tarefas {
         this.completa = completa;
     }
     public LocalDateTime getDataAgora() {
-        return DataAgora;
+        return dataAgora;
     }
     public void setDataAgora(LocalDateTime dataAgora) {
-        DataAgora = dataAgora;
+        this.dataAgora = dataAgora;
     }
 }
