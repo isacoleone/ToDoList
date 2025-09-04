@@ -1,20 +1,13 @@
-package ucb.aplicacao.service;
+package ucb.aplicacao.cli.ToDoList.scr.ucb.aplicacao.service;
 
-import ucb.aplicacao.model.Tarefas;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import ucb.aplicacao.model.Tarefas;
+import ucb.aplicacao.cli.ToDoList.scr.ucb.aplicacao.model.Tarefas;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TarefaService {
-<<<<<<< HEAD
     private List<Tarefas> tarefas = new ArrayList<>();
 
 
-=======
     List<Tarefas> listaTarefas= new ArrayList<Tarefas>(); // declaração do array para armazenar as tarefas
 
     public String criarTarefa(String titulo, String descricao){
@@ -26,5 +19,4 @@ public class TarefaService {
 
         return mensagem;
     }
->>>>>>> origin/Develop
 }

@@ -1,4 +1,4 @@
-package ucb.aplicacao.model;
+package ucb.aplicacao.cli.ToDoList.scr.ucb.aplicacao.model;
 
 import java.time.LocalDateTime;
 
