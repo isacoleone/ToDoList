@@ -1,4 +1,4 @@
-package ucb.aplicacao.cli.ToDoList.scr.ucb.aplicacao.cli;
+package ucb.aplicacao.cli;
 
 import java.util.Scanner;
 
