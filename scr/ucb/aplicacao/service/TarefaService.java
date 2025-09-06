@@ -22,20 +22,21 @@ public class TarefaService {
 
     public String removerTarefa(String titulo){ // remover a tarefa pelo titulo
 
-        if (titulo == null || titulo.isEmpty()) {
+        if (titulo == null || titulo.isEmpty()) { // procura o titulo
 
-            String mensagem = "o titulo esta incorreto";
+            String mensagem = "o titulo esta incorreto"; // caso o titulo esteja incorreto vai aparecer a mensagem
+
 
             return mensagem;
         }
-    for (Tarefas tarefa : listaTarefas) {
+    for (Tarefas tarefa : listaTarefas) { // caso o titulo esteja com o nome correto a tarefa vai ser removida com sucesso
         if (tarefa.getTitulo().equalsIgnoreCase(titulo)) {
             listaTarefas.remove(tarefa);
             return "tarefa" + tarefa.getTitulo() + " removida com sucesso";
         }
     }
 
-        return "nenhuma tarefa foi encontrada!";
+        return "nenhuma tarefa foi encontrada!"; // caso o titulo esteja nulo vai retornar para essa linha
 
     }
 
