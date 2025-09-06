@@ -69,8 +69,7 @@ public class Tarefas {
     public void setDataAgora(LocalDateTime dataAgora) {
         this.dataAgora = dataAgora;
 
-        public void setDataAgora(LocalDateTime dataAgora) {
-
-            this.dataAgora = dataAgora;
     }
+}
+
 }
