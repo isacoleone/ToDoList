@@ -39,5 +39,12 @@ public class TarefaService {
                 .collect(Collectors.toList());
     }
 
-    
+    //PESQUISA POR TITULO OU DESCRIÇÃO
+
+    public List<Tarefas> pesquisaTarefas(String termo) {
+        return listaTarefas.stream()
+                .filter(t -> t.getTitulo().toLowerCase().contains(termo.toLowerCase()) ||
+                        (t.getDescricao() != null && t.getDescricao().toLowerCase().contains(termo.toLowerCase())))
+                .collect(Collectors.toList());
+    }
 }
