@@ -13,10 +13,15 @@ public class TarefaService {
 
     //CRIAÇÃO DA TAREFA
 
+    private long proximoId = 1;
+
     public String criarTarefa(String titulo, String descricao){
         Tarefas tarefa = new Tarefas(titulo, descricao); // instância de Tarefas
 
         listaTarefas.add(tarefa); //Adiciona tarefa a lista de tarefas
+        tarefa.setID(proximoId++);
+
+        listaTarefas.add(tarefa);
 
         String mensagem = "Sua tarefa foi adicionada com sucesso!";
 
@@ -48,4 +53,19 @@ public class TarefaService {
                 .collect(Collectors.toList());
     } //Cria uma lista com somente com as tarefas que tem o trecho citado pelo usuario
     //no titulo ou na descrição
+
+    public String atualizarTarefa(long id, String novoTitulo, String novaDescricao, boolean novaStatus) {
+
+    for (Tarefas tarefa : listaTarefas) {
+        if (tarefa.getID() == id) {
+
+            tarefa.setTitulo(novoTitulo);
+            tarefa.setDescricao(novaDescricao);
+            tarefa.setCompleta(novaStatus);
+            return "Tarefa com ID " + id + " atualizada com sucesso.";
+        }
+    }
+
+    return "Erro: Tarefa com ID " + id + " não encontrada.";
+}
 }
