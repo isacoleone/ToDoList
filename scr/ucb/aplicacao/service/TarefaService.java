@@ -1,8 +1,12 @@
 package ucb.aplicacao.service;
 
 import ucb.aplicacao.model.Tarefas;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TarefaService {
     List<Tarefas> listaTarefas= new ArrayList<Tarefas>(); // declaração do array para armazenar as tarefas
@@ -21,7 +25,19 @@ public class TarefaService {
 
     //LISTAGEM TOTAL DA LISTA DE TAREFAS
 
-    public List<Tarefas> exibirLista(){
-        return new ArrayList<> (listaTarefas); //Cria uma copia da lista de tarefas para exibição
+    public List<Tarefas> exibirLista() {
+        return listaTarefas.stream()
+                .sorted(Comparator.comparing(Tarefas::getDataAgora).reversed())
+                .collect(Collectors.toList());
     }
+
+    //LISTAGEM PELO STATUS
+
+    public List<Tarefas> exibirListaStatus() {
+        return listaTarefas.stream()
+                .filter(s -> !s.getCompleta())
+                .collect(Collectors.toList());
+    }
+
+    
 }
