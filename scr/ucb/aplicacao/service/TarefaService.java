@@ -16,7 +16,7 @@ public class TarefaService {
     public String criarTarefa(String titulo, String descricao){
         Tarefas tarefa = new Tarefas(titulo, descricao); // instância de Tarefas
 
-        listaTarefas.add(tarefa);
+        listaTarefas.add(tarefa); //Adiciona tarefa a lista de tarefas
 
         String mensagem = "Sua tarefa foi adicionada com sucesso!";
 
@@ -27,15 +27,15 @@ public class TarefaService {
 
     public List<Tarefas> exibirLista() {
         return listaTarefas.stream()
-                .sorted(Comparator.comparing(Tarefas::getDataAgora).reversed())
-                .collect(Collectors.toList());
+                .sorted(Comparator.comparing(Tarefas::getDataAgora).reversed()) //Ordena, de forma decrescente as tarefas por data de criação
+                .collect(Collectors.toList()); //Cria uma copia da lista ordenada
     }
 
     //LISTAGEM PELO STATUS
 
     public List<Tarefas> exibirListaStatus() {
         return listaTarefas.stream()
-                .filter(s -> !s.getCompleta())
+                .filter(s -> !s.getCompleta()) //Lista somente as tarefas com Completo = false
                 .collect(Collectors.toList());
     }
 
@@ -46,5 +46,6 @@ public class TarefaService {
                 .filter(t -> t.getTitulo().toLowerCase().contains(termo.toLowerCase()) ||
                         (t.getDescricao() != null && t.getDescricao().toLowerCase().contains(termo.toLowerCase())))
                 .collect(Collectors.toList());
-    }
+    } //Cria uma lista com somente com as tarefas que tem o trecho citado pelo usuario
+    //no titulo ou na descrição
 }
