@@ -3,40 +3,58 @@ package ucb.aplicacao.model;
 import java.time.LocalDateTime;
 
 public class Tarefas {
-    private long ID;
+    private long ID; //identificador
     private String Titulo;
     private String Descricao;
-    private String Data;
-    private boolean completa;
-    private LocalDateTime DataAgora;
+    private String Data; //Data de finalização da tarefa cadastrada (inserida pelo usuario)
+    private boolean completa; //Se ela foi completada
+    private LocalDateTime DataAgora; //Data e hora de cadastro da tarefa
+
+    //Construtor padrão
 
     public Tarefas(){
         this.DataAgora = LocalDateTime.now();
         this.completa = false;
     }
 
+    //Construtor só com o título
+
     public Tarefas(String titulo){
-        this();
+        this(); //Chama o atributos do construtor padrão
         this.Titulo = titulo;
     }
+
+    //Construtor com título e descrição
 
     public Tarefas(String titulo, String descri){
         this();
         this.Titulo = titulo;
         this.Descricao = descri;
-
     }
 
+    //Construtor com ID e Completo
+
     public Tarefas(Long id, String titulo, String descri, boolean completa){
-        this(titulo, descri);
+        this(titulo, descri); //Chama a descrição e titulo dos anteriores
         this.ID = id;
         this.completa = completa;
     }
 
+    //Construtor com data
+
+    public Tarefas(Long id, String titulo, String descri, String data,boolean completa){
+        this(titulo, descri); //Chama a descrição e titulo dos anteriores
+        this.ID = id;
+        this.Data = data;
+        this.completa = completa;
+    }
+
+    //Impressões (get) e inserções (set) de dados
+
     public long getID() {
         return ID;
     }
-    public void setID(int iD) {
+    public void setID(long iD) {
         ID = iD;
     }
     public String getTitulo() {
