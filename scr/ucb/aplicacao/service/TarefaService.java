@@ -23,8 +23,6 @@ public class TarefaService {
         listaTarefas.add(tarefa); //Adiciona tarefa a lista de tarefas
         tarefa.setID(proximoId++);
 
-        listaTarefas.add(tarefa);
-
         String mensagem = "Sua tarefa foi adicionada com sucesso!";
 
         return mensagem;
@@ -58,16 +56,19 @@ public class TarefaService {
 
     public String atualizarTarefa(long id, String novoTitulo, String novaDescricao, boolean novaStatus) {
 
-    for (Tarefas tarefa : listaTarefas) {
-        if (tarefa.getID() == id) {
+        for (Tarefas tarefa : listaTarefas) {
+            if (tarefa.getID() == id) {
 
-            tarefa.setTitulo(novoTitulo);
-            tarefa.setDescricao(novaDescricao);
-            tarefa.setCompleta(novaStatus);
-            return "Tarefa com ID " + id + " atualizada com sucesso.";
+                tarefa.setTitulo(novoTitulo);
+                tarefa.setDescricao(novaDescricao);
+                tarefa.setCompleta(novaStatus);
+                return "Tarefa com ID " + id + " atualizada com sucesso.";
+            }
         }
+        return "Erro: Tarefa com ID " + id + " não encontrada.";
+    }
 
-    public String removerTarefa(String titulo){ // remover a tarefa pelo titulo
+    public String removerTarefa (String titulo){ // remover a tarefa pelo titulo
 
         if (titulo == null || titulo.isEmpty()) { // procura o titulo
 
@@ -85,9 +86,4 @@ public class TarefaService {
         return "nenhuma tarefa foi encontrada!"; // caso o titulo esteja nulo vai retornar para essa linha
 
     }
-
-
-    return "Erro: Tarefa com ID " + id + " não encontrada.";
-}
-
 }

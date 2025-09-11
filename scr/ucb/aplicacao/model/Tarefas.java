@@ -44,7 +44,7 @@ public class Tarefas {
     public Tarefas(Long id, String titulo, String descri, String data,boolean completa){
         this(titulo, descri); //Chama a descrição e titulo dos anteriores
         this.ID = id;
-        this.Data = data;
+        this.data = data;
         this.completa = completa;
     }
 
