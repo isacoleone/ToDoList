@@ -54,7 +54,7 @@ public class Tarefas {
     public long getID() {
         return ID;
     }
-    public void setID(int iD) {
+    public void setID(long iD) {
         ID = iD;
     }
     public String getTitulo() {
